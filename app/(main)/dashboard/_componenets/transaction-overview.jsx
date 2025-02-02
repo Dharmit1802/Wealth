@@ -51,9 +51,10 @@ export function DashboardOverview({ accounts, transactions }) {
   const currentDate = new Date();
   const currentMonthExpenses = accountTransactions.filter((t) => {
     const transactionDate = new Date(t.date);
+
     return (
       t.type === "EXPENSE" &&
-      transactionDate.getMonth() === currentDate.getMonth() &&
+      transactionDate.getMonth() !== currentDate.getMonth() &&
       transactionDate.getFullYear() === currentDate.getFullYear()
     );
   });
@@ -65,6 +66,7 @@ export function DashboardOverview({ accounts, transactions }) {
       acc[category] = 0;
     }
     acc[category] += transaction.amount;
+
     return acc;
   }, {});
 
@@ -74,7 +76,7 @@ export function DashboardOverview({ accounts, transactions }) {
       name: category,
       value: amount,
     })
-  );
+  ); //p
 
   return (
     <div className="grid gap-4 md:grid-cols-2">

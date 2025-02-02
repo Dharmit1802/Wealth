@@ -130,8 +130,8 @@ function BudgetProgress({ initialBudget, currentExpenses }) {
                 percentageUsed >= 90
                   ? "bg-red-500"
                   : percentageUsed >= 75
-                  ? "bg-yellow-500"
-                  : "bg-green-500"
+                    ? "bg-yellow-500"
+                    : "bg-green-400"
               }`}
             />
             <p className="text-xs text-muted-foreground text-right">

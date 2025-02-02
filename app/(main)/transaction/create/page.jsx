@@ -4,7 +4,8 @@ import React from "react";
 import AddTransactionForm from "../_components/add-transaction";
 import { getTransaction } from "@/actions/transactions";
 
-async function AddTransactionPage({ searchParams }) {
+async function AddTransactionPage(props) {
+  const searchParams = await props.searchParams;
   const accounts = await getUserAccounts();
 
   const editId = searchParams?.edit;
