@@ -54,7 +54,7 @@ export function DashboardOverview({ accounts, transactions }) {
 
     return (
       t.type === "EXPENSE" &&
-      transactionDate.getMonth() !== currentDate.getMonth() &&
+      transactionDate.getMonth() === currentDate.getMonth() &&
       transactionDate.getFullYear() === currentDate.getFullYear()
     );
   });
